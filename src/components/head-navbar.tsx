@@ -19,15 +19,17 @@ import {
 import { useRouter } from 'next/router';
 
 import styles from './head-navbar.module.css';
+import { useTranslation } from 'react-i18next';
 
 const HeadNavBar = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const navList = [
-    { icon: LuZap, label: '启动', path: '/launch' },
-    { icon: LuBox, label: '游戏', path: '/games' },
-    { icon: LuUserCircle2, label: '账户', path: '/accounts' },
-    { icon: LuSettings, label: '设置', path: '/settings' },
+    { icon: LuZap, label: t("NavList.launch"), path: '/launch' },
+    { icon: LuBox, label: t("NavList.games"), path: '/games' },
+    { icon: LuUserCircle2, label: t("NavList.accounts"), path: '/accounts' },
+    { icon: LuSettings, label: t("NavList.settings"), path: '/settings' },
   ]
 
   const selectedIndex = navList.findIndex((item) =>
