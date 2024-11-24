@@ -1,9 +1,14 @@
-const IndexPage = () => {
-  return (
-    <div>
-      Hello World
-    </div>
-  )
-}
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-export default IndexPage
+const IndexPage = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/launch');
+  }, [router]);
+
+  return null;
+};
+
+export default IndexPage;
