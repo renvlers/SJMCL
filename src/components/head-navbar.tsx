@@ -26,10 +26,10 @@ const HeadNavBar = () => {
   const { t } = useTranslation();
 
   const navList = [
-    { icon: LuZap, label: t("NavList.launch"), path: '/launch' },
-    { icon: LuBox, label: t("NavList.games"), path: '/games' },
-    { icon: LuUserCircle2, label: t("NavList.accounts"), path: '/accounts' },
-    { icon: LuSettings, label: t("NavList.settings"), path: '/settings' },
+    { icon: LuZap, label: "launch", path: '/launch' },
+    { icon: LuBox, label: "games", path: '/games' },
+    { icon: LuUserCircle2, label: "accounts", path: '/accounts' },
+    { icon: LuSettings, label: "settings", path: '/settings' },
   ]
 
   const selectedIndex = navList.findIndex((item) =>
@@ -56,7 +56,7 @@ const HeadNavBar = () => {
                 <Tab key={item.path} fontWeight={selectedIndex === index ? '600' : 'normal'}>
                   <HStack spacing={2}>
                     <Icon as={item.icon} />
-                    <Text>{item.label}</Text>
+                    <Text>{t(`HeadNavBar.navList.${item.label}`)}</Text>
                   </HStack>
                 </Tab>
               ))}
